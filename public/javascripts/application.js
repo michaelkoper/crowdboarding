@@ -1,12 +1,15 @@
 $(document).ready(function() {
+	mouseOverEvent();
 	mouseOverHelmet();
 	showNotifyBar();
 });
-
+mouseOverEvent = function(){
+	$("div.event").hover(function(){$(this).toggleClass('hover');});
+}
 mouseOverHelmet = function(){
-	$("div#helmet").mouseover(function() {
+	$("div#helmet").hover(function(){
 		$(this).css('background-position', '0 -123px');
-	}).mouseout(function() { 
+	}, function() { 
 		$(this).css('background-position', '0 0');
 	});
 }
